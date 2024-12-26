@@ -1,0 +1,19 @@
+services:
+  shorten:
+    build: ./shorten
+    volumes:
+      - ./storage:/storage
+    environment:
+      STORAGE_DIR: /storage
+    ports:
+      - 8081:80
+  todo:
+    build: ./todo
+    volumes:
+      - ./storage:/storage
+    environment:
+      STORAGE_DIR: /storage
+    ports:
+      - 8082:80
+  
+
